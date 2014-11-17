@@ -21,6 +21,6 @@
     "ext-curl": "*"
   },
   "autoload": {
-    "psr-0": { "tmhOAuth": "" }
+    "psr-0": { "Twitter": "" }
   }
 }
