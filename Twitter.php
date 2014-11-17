@@ -13,7 +13,7 @@
  */
 defined('__DIR__') or define('__DIR__', dirname(__FILE__));
 
-class tmhOAuth {
+class Twitter {
   const VERSION = '0.8.4';
   var $response = array();
 
@@ -825,6 +825,8 @@ class tmhOAuth {
       $this->response['content-length'] = 0;
       curl_setopt($c, CURLOPT_TIMEOUT, 0);
       curl_setopt($c, CURLOPT_WRITEFUNCTION, array($this, 'curlWrite'));
+    }else {
+      curl_setopt($c, CURLOPT_TIMEOUT, 60);
     }
 
     if ( ! empty($this->request_settings['headers'])) {
